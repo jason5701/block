@@ -1,0 +1,25 @@
+{
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "outDir": "./build/",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "strict": true,
+    "target": "ES6",
+    "removeComments": true,
+    "lib": ["ES6"],
+    "allowJs": true,
+    "typeRoots": ["./node_modules/@types", "/@types"],
+    "baseUrl": ".",
+    "paths": {
+      // @core/ 경로를 쓰면 src/core/ 경로의 모든 파일
+      "@core/*": ["src/core/*"],
+      "*": ["@types/*"]
+    }
+  },
+  "ts-node": {
+    "files": true,
+    "require": ["tsconfig-paths/register"]
+  }
+}
